@@ -1,3 +1,8 @@
+/*
+Gabriel Rodriguez De Los Reyes
+03/12/2023
+This script applies the transformations to the mesh ti the car
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -76,7 +81,7 @@ public class ApplyTransformsCar : MonoBehaviour
         Matrix4x4 initialRotate = HW_Transforms.RotateMat(90, AXIS.Y);
         Matrix4x4 inititalScale = HW_Transforms.ScaleMat(0.35f, 0.35f, 0.35f);
 
-        Matrix4x4 rotateWheels = HW_Transforms.RotateMat(-90*Time.time, AXIS.X);
+        Matrix4x4 rotateWheels = HW_Transforms.RotateMat(-90 * Time.time, AXIS.X);
 
         Matrix4x4 composite = globalComposite * initialMove * rotateWheels * initialRotate * inititalScale;
 
@@ -91,7 +96,7 @@ public class ApplyTransformsCar : MonoBehaviour
     }
 
     void DoTransform()
-    {        
+    {
         for (int i = 0; i < newVertices.Length; i++)
         {
             Vector4 temp = new Vector4(baseVertices[i].x, baseVertices[i].y, baseVertices[i].z, 1);

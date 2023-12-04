@@ -1,3 +1,9 @@
+/*
+Gabriel Rodriguez De Los Reyes
+03/12/2023
+This script applies the transformations to the wheels
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,7 +37,7 @@ public class ApplyTransformsWheel : MonoBehaviour
         {
             newVertices[i] = baseVertices[i];
         }
-        
+
     }
 
     // Update is called once per frame
@@ -40,18 +46,19 @@ public class ApplyTransformsWheel : MonoBehaviour
         DoTransform();
     }
 
-    void DoTransform(){
+    void DoTransform()
+    {
         //Define initial matrices
         Matrix4x4 move = HW_Transforms.TranslationMat(wheelDisplacement[wheel].x, wheelDisplacement[wheel].y, wheelDisplacement[wheel].z);
         Matrix4x4 rotate = HW_Transforms.RotateMat(90, AXIS.Y);
         Matrix4x4 scaled = HW_Transforms.ScaleMat(0.35f, 0.35f, 0.35f);
 
-        Matrix4x4 rotateWheels = HW_Transforms.RotateMat(-90*Time.time, AXIS.X);
-        Matrix4x4 moveWheels = HW_Transforms.TranslationMat(displacement.x *Time.time , displacement.y *Time.time, displacement.z *Time.time);
+        Matrix4x4 rotateWheels = HW_Transforms.RotateMat(-90 * Time.time, AXIS.X);
+        Matrix4x4 moveWheels = HW_Transforms.TranslationMat(displacement.x * Time.time, displacement.y * Time.time, displacement.z * Time.time);
 
         Matrix4x4 composite = moveWheels * move * rotateWheels * rotate * scaled;
 
-        for (int i=0; i<newVertices.Length; i++)
+        for (int i = 0; i < newVertices.Length; i++)
         {
             Vector4 temp = new Vector4(baseVertices[i].x, baseVertices[i].y, baseVertices[i].z, 1);
 

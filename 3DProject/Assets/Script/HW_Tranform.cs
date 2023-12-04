@@ -1,8 +1,7 @@
 /*
-Functions to work with transformation matrices in 3D
-
-Gilberto Echeverria
-2022-11-03
+Gabriel Rodriguez De Los Reyes
+03/12/2023
+Functions for the transformations such as translation, rotation and scaling
 */
 
 

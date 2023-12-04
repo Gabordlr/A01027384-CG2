@@ -1,3 +1,10 @@
+/*
+Gabriel Rodriguez De Los Reyes
+03/12/2023
+This script defines the global variables for the scene (currently is unused)
+It was created for testing purposes
+*/
+
 using UnityEngine;
 
 public class GlobalVariables : MonoBehaviour
